@@ -1,0 +1,27 @@
+check_name,failed_rows,status
+BMI flagged outliers are NULL in fact_entry,0,PASS
+Games label = year + season,0,PASS
+age within 10..97 when known,0,PASS
+at most 3 medal ranks,0,PASS
+clean rows = distinct raw rows,0,PASS
+dim_games has 51 editions (28 Summer + 1906 Intercalated + 22 Winter),0,PASS
+entry_key unique,0,PASS
+event name starts with sport name,0,PASS
+every Games edition has a host nation,0,PASS
+every NOC maps to a region,0,PASS
+fact_entry athlete ids exist in dim_athlete,0,PASS
+fact_entry keeps every clean entry (RI),0,PASS
+fact_medal keys exist in dim_games and dim_event,0,PASS
+height within 120..230 cm when known,0,PASS
+medal events <= athlete medal rows,0,PASS
+"medal in {Gold,Silver,Bronze,NA}",0,PASS
+medal rows reconcile (fact_medal athletes = medal entries),0,PASS
+no exact duplicate entries left,0,PASS
+one city per Games except 1956 Summer,0,PASS
+one row per athlete x Games x event x team after 1908 (art works excepted),0,PASS
+one sex per athlete id,0,PASS
+region medal table total = official medal events,0,PASS
+"season in {Summer,Winter}",0,PASS
+"sex in {M,F}",0,PASS
+weight within 20..220 kg when known,0,PASS
+year in 1896..2016,0,PASS

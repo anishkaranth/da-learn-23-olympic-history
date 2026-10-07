@@ -1,0 +1,35 @@
+// measures.dax  DAX measures for the da-learn-23 Olympic history model (tables as in model.md)
+// Medal measures use fact_medal (one row per podium place, so a relay gold counts once). Filter is_official = 1 for IOC-recognised results.
+
+Medals = CALCULATE ( COUNTROWS ( fact_medal ), fact_medal[is_official] = 1 )
+Gold = CALCULATE ( [Medals], fact_medal[medal] = "Gold" )
+Silver = CALCULATE ( [Medals], fact_medal[medal] = "Silver" )
+Bronze = CALCULATE ( [Medals], fact_medal[medal] = "Bronze" )
+Gold Share % = DIVIDE ( [Gold], [Medals] )
+Share of All Medals % =
+    DIVIDE ( [Medals], CALCULATE ( [Medals], REMOVEFILTERS ( dim_noc ) ) )
+Medal Points = [Gold] * 3 + [Silver] * 2 + [Bronze]
+
+// Entry-level measures (fact_entry_sample is a 1-in-5 sample: scale counts by 5, rates are unbiased)
+Entries (est.) = COUNTROWS ( fact_entry_sample ) * 5
+Athletes (sample) = DISTINCTCOUNT ( fact_entry_sample[athlete_id] )
+Medal Rate % = DIVIDE ( SUM ( fact_entry_sample[is_medal] ), COUNTROWS ( fact_entry_sample ) )
+Avg Height cm = AVERAGE ( fact_entry_sample[height_cm] )
+Avg Weight kg = AVERAGE ( fact_entry_sample[weight_kg] )
+Avg BMI = AVERAGE ( fact_entry_sample[bmi] )
+Avg Age = AVERAGE ( fact_entry_sample[age] )
+Female Athletes % =
+    DIVIDE (
+        CALCULATE ( DISTINCTCOUNT ( fact_entry_sample[athlete_id] ), dim_athlete[sex] = "F" ),
+        DISTINCTCOUNT ( fact_entry_sample[athlete_id] )
+    )
+
+// Athlete-level (dim_athlete is complete)
+Athletes = COUNTROWS ( dim_athlete )
+Top Athlete Medals = MAX ( dim_athlete[medals] )
+
+// Host effect: medals won by the host nation at its own Games
+Host Medals = CALCULATE ( [Medals], fact_medal[is_host_nation] = 1 )
+Host Share % = DIVIDE ( [Host Medals], [Medals] )
+Games Count = DISTINCTCOUNT ( fact_medal[games_key] )
+Medals per Games = DIVIDE ( [Medals], [Games Count] )

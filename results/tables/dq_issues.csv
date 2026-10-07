@@ -1,0 +1,18 @@
+check_name,affected_rows
+"1906 Intercalated Games rows (excluded, not IOC-recognised)",1733
+Art Competitions rows (excluded from sport analysis),2263
+"BMI < 15 or > 60 (flagged, left out of BMI averages)",108
+Games played in two cities (1956 Summer: Melbourne + Stockholm),1
+NOC SGP missing from noc_regions (override -> Singapore),349
+RI: entries lost in dim joins,0
+"age 65+ (kept: mostly art, equestrian, sailing, shooting)",177
+age under 13 (kept),53
+athlete ids with more than one name spelling,0
+athlete medal rows collapsed into team podium places,20845
+exact duplicate rows dropped,1385
+official events with more than one gold (ties / shared golds),50
+official events with no gold recorded,13
+"region literal NA (ROT/TUV/UNK, notes used)",21
+"repeat rows: same athlete, Games, event, team (1900/1908 races + several art works; kept)",139
+rows with unparseable id / year dropped,0
+team names with -1/-2 suffix (second boats/crews) normalised,6114

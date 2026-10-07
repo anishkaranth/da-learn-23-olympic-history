@@ -1,0 +1,5 @@
+noc,region,reason
+SGP,Singapore,"athlete_events uses SGP for Singapore but noc_regions.csv lists it as SIN"
+ROT,Refugee Olympic Team,"region is the string NA in noc_regions.csv; notes column used"
+TUV,Tuvalu,"region is the string NA in noc_regions.csv; notes column used"
+UNK,Unknown,"region is the string NA in noc_regions.csv; notes column used"

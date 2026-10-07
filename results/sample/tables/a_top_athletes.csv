@@ -1,0 +1,16 @@
+rnk,athlete_id,athlete_name,noc,sport,first_year,last_year,gold,silver,bronze,medals
+1,74420,Edoardo Mangiarotti,ITA,Fencing,1936,1960,6,5,2,13
+2,5700,Polina Hryhorivna Astakhova,URS,Gymnastics,1956,1964,5,2,3,10
+3,36960,Gert Fridolf Fredriksson,SWE,Canoeing,1948,1960,6,1,1,8
+4,20,Kjetil Andr Aamodt,NOR,Alpine Skiing,1992,2006,4,2,2,8
+5,36840,Dawn Lorraine Fraser,AUS,Swimming,1956,1964,4,4,0,8
+6,32700,"Karin Enke-Kania (-Busch-, -Richter)",GDR,Speed Skating,1980,1988,3,4,1,8
+7,63400,Katalin Kovcs,HUN,Canoeing,2000,2012,3,5,0,8
+8,3880,Agneta Monica Andersson,SWE,Canoeing,1980,1996,3,2,2,7
+9,59380,Svetlana Vasilyevna Khorkina,RUS,Gymnastics,1996,2004,2,4,1,7
+10,90020,Kristin Otto,GDR,Swimming,1988,1988,6,0,0,6
+11,87160,Yelena Dmitriyevna Novikova-Belova,URS,Fencing,1968,1980,4,1,1,6
+12,134980,"Leontine Martha Henrica Petronella ""Leontien"" Zijlaard-van Moorsel",NED,Cycling,1992,2004,4,1,1,6
+13,38860,"Robert ""Bob"" Garrett",USA,Athletics,1896,1900,2,2,2,6
+14,62160,"Johan Pietari ""Hannes"" Kolehmainen",FIN,Athletics,1912,1924,4,1,0,5
+15,134080,Emil Ztopek,TCH,Athletics,1948,1956,4,1,0,5

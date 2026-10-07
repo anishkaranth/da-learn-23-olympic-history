@@ -1,0 +1,566 @@
+{
+ "snapshot": "headline KPIs + run config",
+ "project": "da-learn-23-olympic-history",
+ "source_mode": "full",
+ "engine": "duckdb 1.5.6",
+ "config": {
+  "sql_dialect": "Spark SQL style (+ DuckDB shims in sql/00), run on DuckDB; Databricks skipped (workspace quota)",
+  "grain": "fact_entry = one athlete x event x Games row; fact_medal = one podium place (Games x event x NOC x team entry x medal)",
+  "official_scope": "analysis excludes the 1906 Intercalated Games (not IOC-recognised) and the 1912-1948 Art Competitions",
+  "medal_rule": "team members share one medal: a relay or team gold counts once for the nation, not once per athlete",
+  "region_rule": "NOC -> region from noc_regions.csv (URS/EUN -> Russia, GDR/FRG -> Germany, YUG -> Serbia ...), SGP override added",
+  "host_effect": "host region's share of all medals at home vs its mean share at the other same-season Games within 12 years",
+  "physique": "Summer 1992-2016, one row per athlete x Games x sport, BMI < 15 or > 60 excluded",
+  "sample_rule": "data/raw: every athlete whose ID % 20 = 0 (all their rows) + every row of an exact-duplicate group (scripts/make_sample.py); noc_regions.csv in full"
+ },
+ "headline": {
+  "raw_rows": 271116,
+  "clean_entries": 269731,
+  "athletes": 135571,
+  "games_editions": 51,
+  "official_games_editions": 50,
+  "summer_games": 28,
+  "winter_games": 22,
+  "official_events": 715,
+  "official_sports": 65,
+  "nocs": 230,
+  "regions": 209,
+  "athlete_medal_rows": 39158,
+  "medal_events": 18556,
+  "pct_entries_medal": 14.74,
+  "female_pct_athletes_2016": 45.03,
+  "female_pct_athletes_1948": 9.65,
+  "athletes_2016": 11179,
+  "athletes_1896": 176,
+  "most_medals_one_athlete": 28,
+  "first_year": 1896,
+  "last_year": 2016
+ },
+ "medal_table_top10": [
+  {
+   "rnk": 1,
+   "region": "USA",
+   "gold": 1115,
+   "silver": 891,
+   "bronze": 786,
+   "total": 2792,
+   "pct_all_medals": 15.05
+  },
+  {
+   "rnk": 2,
+   "region": "Russia",
+   "gold": 727,
+   "silver": 600,
+   "bronze": 589,
+   "total": 1916,
+   "pct_all_medals": 10.33
+  },
+  {
+   "rnk": 3,
+   "region": "Germany",
+   "gold": 568,
+   "silver": 579,
+   "bronze": 584,
+   "total": 1731,
+   "pct_all_medals": 9.33
+  },
+  {"rnk": 4, "region": "UK", "gold": 278, "silver": 304, "bronze": 306, "total": 888, "pct_all_medals": 4.79},
+  {
+   "rnk": 5,
+   "region": "France",
+   "gold": 246,
+   "silver": 273,
+   "bronze": 313,
+   "total": 832,
+   "pct_all_medals": 4.48
+  },
+  {
+   "rnk": 6,
+   "region": "Italy",
+   "gold": 244,
+   "silver": 212,
+   "bronze": 236,
+   "total": 692,
+   "pct_all_medals": 3.73
+  },
+  {
+   "rnk": 7,
+   "region": "Sweden",
+   "gold": 196,
+   "silver": 210,
+   "bronze": 233,
+   "total": 639,
+   "pct_all_medals": 3.44
+  },
+  {
+   "rnk": 8,
+   "region": "China",
+   "gold": 240,
+   "silver": 185,
+   "bronze": 173,
+   "total": 598,
+   "pct_all_medals": 3.22
+  },
+  {
+   "rnk": 9,
+   "region": "Australia",
+   "gold": 156,
+   "silver": 174,
+   "bronze": 198,
+   "total": 528,
+   "pct_all_medals": 2.85
+  },
+  {
+   "rnk": 10,
+   "region": "Hungary",
+   "gold": 175,
+   "silver": 149,
+   "bronze": 172,
+   "total": 496,
+   "pct_all_medals": 2.67
+  }
+ ],
+ "host_effect": [
+  {
+   "games": "1896 Summer",
+   "host_region": "Greece",
+   "host_medals": 44,
+   "host_pct_at_home": 36.67,
+   "host_pct_other_games": 0.65
+  },
+  {
+   "games": "1900 Summer",
+   "host_region": "France",
+   "host_medals": 109,
+   "host_pct_at_home": 36.33,
+   "host_pct_other_games": 5.07
+  },
+  {
+   "games": "1904 Summer",
+   "host_region": "USA",
+   "host_medals": 231,
+   "host_pct_at_home": 82.5,
+   "host_pct_other_games": 17.03
+  },
+  {
+   "games": "1908 Summer",
+   "host_region": "UK",
+   "host_medals": 145,
+   "host_pct_at_home": 45.03,
+   "host_pct_other_games": 9.07
+  },
+  {
+   "games": "1912 Summer",
+   "host_region": "Sweden",
+   "host_medals": 65,
+   "host_pct_at_home": 20.97,
+   "host_pct_other_games": 6.15
+  },
+  {
+   "games": "1920 Summer",
+   "host_region": "Belgium",
+   "host_medals": 36,
+   "host_pct_at_home": 8.22,
+   "host_pct_other_games": 1.76
+  },
+  {
+   "games": "1924 Summer",
+   "host_region": "France",
+   "host_medals": 37,
+   "host_pct_at_home": 9.81,
+   "host_pct_other_games": 6.13
+  },
+  {
+   "games": "1924 Winter",
+   "host_region": "France",
+   "host_medals": 3,
+   "host_pct_at_home": 5.66,
+   "host_pct_other_games": 2.26
+  },
+  {
+   "games": "1928 Summer",
+   "host_region": "Netherlands",
+   "host_medals": 19,
+   "host_pct_at_home": 5.81,
+   "host_pct_other_games": 2.89
+  },
+  {
+   "games": "1928 Winter",
+   "host_region": "Switzerland",
+   "host_medals": 1,
+   "host_pct_at_home": 2.44,
+   "host_pct_other_games": 4.64
+  },
+  {
+   "games": "1932 Summer",
+   "host_region": "USA",
+   "host_medals": 103,
+   "host_pct_at_home": 29.68,
+   "host_pct_other_games": 19.86
+  },
+  {
+   "games": "1932 Winter",
+   "host_region": "USA",
+   "host_medals": 12,
+   "host_pct_at_home": 28.57,
+   "host_pct_other_games": 10.01
+  },
+  {
+   "games": "1936 Summer",
+   "host_region": "Germany",
+   "host_medals": 89,
+   "host_pct_at_home": 22.82,
+   "host_pct_other_games": 3.88
+  },
+  {
+   "games": "1936 Winter",
+   "host_region": "Germany",
+   "host_medals": 6,
+   "host_pct_at_home": 11.76,
+   "host_pct_other_games": 1.8
+  },
+  {
+   "games": "1948 Summer",
+   "host_region": "UK",
+   "host_medals": 23,
+   "host_pct_at_home": 5.65,
+   "host_pct_other_games": 3.87
+  },
+  {
+   "games": "1948 Winter",
+   "host_region": "Switzerland",
+   "host_medals": 9,
+   "host_pct_at_home": 13.64,
+   "host_pct_other_games": 4.95
+  },
+  {
+   "games": "1952 Summer",
+   "host_region": "Finland",
+   "host_medals": 22,
+   "host_pct_at_home": 4.81,
+   "host_pct_other_games": 2.43
+  },
+  {
+   "games": "1952 Winter",
+   "host_region": "Norway",
+   "host_medals": 16,
+   "host_pct_at_home": 23.88,
+   "host_pct_other_games": 10.69
+  },
+  {
+   "games": "1956 Summer",
+   "host_region": "Australia",
+   "host_medals": 35,
+   "host_pct_at_home": 7.49,
+   "host_pct_other_games": 3.44
+  },
+  {
+   "games": "1956 Winter",
+   "host_region": "Italy",
+   "host_medals": 3,
+   "host_pct_at_home": 4.23,
+   "host_pct_other_games": 2.69
+  },
+  {
+   "games": "1960 Summer",
+   "host_region": "Italy",
+   "host_medals": 36,
+   "host_pct_at_home": 7.81,
+   "host_pct_other_games": 4.67
+  },
+  {
+   "games": "1960 Winter",
+   "host_region": "USA",
+   "host_medals": 10,
+   "host_pct_at_home": 12.35,
+   "host_pct_other_games": 9.6
+  },
+  {
+   "games": "1964 Summer",
+   "host_region": "Japan",
+   "host_medals": 29,
+   "host_pct_at_home": 5.79,
+   "host_pct_other_games": 3.83
+  },
+  {
+   "games": "1964 Winter",
+   "host_region": "Austria",
+   "host_medals": 12,
+   "host_pct_at_home": 11.65,
+   "host_pct_other_games": 9.26
+  },
+  {
+   "games": "1968 Summer",
+   "host_region": "Mexico",
+   "host_medals": 9,
+   "host_pct_at_home": 1.71,
+   "host_pct_other_games": 0.33
+  },
+  {
+   "games": "1968 Winter",
+   "host_region": "France",
+   "host_medals": 9,
+   "host_pct_at_home": 8.65,
+   "host_pct_other_games": 2.52
+  },
+  {
+   "games": "1972 Summer",
+   "host_region": "Germany",
+   "host_medals": 106,
+   "host_pct_at_home": 17.67,
+   "host_pct_other_games": 13.07
+  },
+  {
+   "games": "1972 Winter",
+   "host_region": "Japan",
+   "host_medals": 3,
+   "host_pct_at_home": 2.86,
+   "host_pct_other_games": 0.29
+  },
+  {
+   "games": "1976 Summer",
+   "host_region": "Canada",
+   "host_medals": 11,
+   "host_pct_at_home": 1.79,
+   "host_pct_other_games": 1.73
+  },
+  {
+   "games": "1976 Winter",
+   "host_region": "Austria",
+   "host_medals": 6,
+   "host_pct_at_home": 5.41,
+   "host_pct_other_games": 6.86
+  },
+  {
+   "games": "1980 Summer",
+   "host_region": "Russia",
+   "host_medals": 195,
+   "host_pct_at_home": 30.9,
+   "host_pct_other_games": 14.28
+  },
+  {
+   "games": "1980 Winter",
+   "host_region": "USA",
+   "host_medals": 12,
+   "host_pct_at_home": 10.43,
+   "host_pct_other_games": 6.53
+  },
+  {
+   "games": "1984 Summer",
+   "host_region": "USA",
+   "host_medals": 173,
+   "host_pct_at_home": 25.26,
+   "host_pct_other_games": 11.5
+  },
+  {
+   "games": "1984 Winter",
+   "host_region": "Serbia",
+   "host_medals": 1,
+   "host_pct_at_home": 0.85,
+   "host_pct_other_games": 0.36
+  },
+  {
+   "games": "1988 Summer",
+   "host_region": "South Korea",
+   "host_medals": 33,
+   "host_pct_at_home": 4.47,
+   "host_pct_other_games": 2.26
+  },
+  {
+   "games": "1988 Winter",
+   "host_region": "Canada",
+   "host_medals": 5,
+   "host_pct_at_home": 3.62,
+   "host_pct_other_games": 4.45
+  },
+  {
+   "games": "1992 Summer",
+   "host_region": "Spain",
+   "host_medals": 22,
+   "host_pct_at_home": 2.7,
+   "host_pct_other_games": 1.27
+  },
+  {
+   "games": "1992 Winter",
+   "host_region": "France",
+   "host_medals": 9,
+   "host_pct_at_home": 5.36,
+   "host_pct_other_games": 2.72
+  },
+  {
+   "games": "1994 Winter",
+   "host_region": "Norway",
+   "host_medals": 23,
+   "host_pct_at_home": 12.78,
+   "host_pct_other_games": 8.36
+  },
+  {
+   "games": "1996 Summer",
+   "host_region": "USA",
+   "host_medals": 101,
+   "host_pct_at_home": 12.01,
+   "host_pct_other_games": 13.9
+  },
+  {
+   "games": "1998 Winter",
+   "host_region": "Japan",
+   "host_medals": 10,
+   "host_pct_at_home": 4.95,
+   "host_pct_other_games": 1.81
+  },
+  {
+   "games": "2000 Summer",
+   "host_region": "Australia",
+   "host_medals": 58,
+   "host_pct_at_home": 6.27,
+   "host_pct_other_games": 3.98
+  },
+  {
+   "games": "2002 Winter",
+   "host_region": "USA",
+   "host_medals": 34,
+   "host_pct_at_home": 14.59,
+   "host_pct_other_games": 8.99
+  },
+  {
+   "games": "2004 Summer",
+   "host_region": "Greece",
+   "host_medals": 16,
+   "host_pct_at_home": 1.73,
+   "host_pct_other_games": 0.64
+  },
+  {
+   "games": "2006 Winter",
+   "host_region": "Italy",
+   "host_medals": 11,
+   "host_pct_at_home": 4.37,
+   "host_pct_other_games": 5.26
+  },
+  {
+   "games": "2008 Summer",
+   "host_region": "China",
+   "host_medals": 100,
+   "host_pct_at_home": 10.38,
+   "host_pct_other_games": 7.14
+  },
+  {
+   "games": "2010 Winter",
+   "host_region": "Canada",
+   "host_medals": 26,
+   "host_pct_at_home": 10.08,
+   "host_pct_other_games": 8.18
+  },
+  {
+   "games": "2012 Summer",
+   "host_region": "UK",
+   "host_medals": 65,
+   "host_pct_at_home": 6.76,
+   "host_pct_other_games": 4.53
+  },
+  {
+   "games": "2014 Winter",
+   "host_region": "Russia",
+   "host_medals": 33,
+   "host_pct_at_home": 11.19,
+   "host_pct_other_games": 6.71
+  },
+  {
+   "games": "2016 Summer",
+   "host_region": "Brazil",
+   "host_medals": 19,
+   "host_pct_at_home": 1.95,
+   "host_pct_other_games": 1.5
+  }
+ ],
+ "women_summer": [
+  {"year": 1896, "female_pct": 0.0, "women_events_pct": 0.0},
+  {"year": 1900, "female_pct": 1.88, "women_events_pct": 2.22},
+  {"year": 1904, "female_pct": 0.92, "women_events_pct": 3.16},
+  {"year": 1908, "female_pct": 2.17, "women_events_pct": 3.67},
+  {"year": 1912, "female_pct": 2.23, "women_events_pct": 4.9},
+  {"year": 1920, "female_pct": 2.89, "women_events_pct": 5.23},
+  {"year": 1924, "female_pct": 4.4, "women_events_pct": 7.94},
+  {"year": 1928, "female_pct": 9.52, "women_events_pct": 12.84},
+  {"year": 1932, "female_pct": 9.44, "women_events_pct": 11.86},
+  {"year": 1936, "female_pct": 8.34, "women_events_pct": 11.45},
+  {"year": 1948, "female_pct": 9.65, "women_events_pct": 14.07},
+  {"year": 1952, "female_pct": 10.56, "women_events_pct": 16.78},
+  {"year": 1956, "female_pct": 11.47, "women_events_pct": 17.22},
+  {"year": 1960, "female_pct": 11.45, "women_events_pct": 19.33},
+  {"year": 1964, "female_pct": 13.24, "women_events_pct": 20.25},
+  {"year": 1968, "female_pct": 14.09, "women_events_pct": 22.67},
+  {"year": 1972, "female_pct": 14.9, "women_events_pct": 22.28},
+  {"year": 1976, "female_pct": 20.75, "women_events_pct": 24.75},
+  {"year": 1980, "female_pct": 21.35, "women_events_pct": 24.63},
+  {"year": 1984, "female_pct": 23.08, "women_events_pct": 28.05},
+  {"year": 1988, "female_pct": 26.06, "women_events_pct": 30.38},
+  {"year": 1992, "female_pct": 29.01, "women_events_pct": 33.46},
+  {"year": 1996, "female_pct": 34.02, "women_events_pct": 35.79},
+  {"year": 2000, "female_pct": 38.21, "women_events_pct": 40.0},
+  {"year": 2004, "female_pct": 40.73, "women_events_pct": 41.53},
+  {"year": 2008, "female_pct": 42.29, "women_events_pct": 42.05},
+  {"year": 2012, "female_pct": 44.25, "women_events_pct": 43.71},
+  {"year": 2016, "female_pct": 45.03, "women_events_pct": 44.44}
+ ],
+ "top_athletes": [
+  {
+   "rnk": 1,
+   "athlete_name": "Michael Fred Phelps, II",
+   "noc": "USA",
+   "sport": "Swimming",
+   "gold": 23,
+   "silver": 3,
+   "bronze": 2,
+   "medals": 28
+  },
+  {
+   "rnk": 2,
+   "athlete_name": "Larysa Semenivna Latynina (Diriy-)",
+   "noc": "URS",
+   "sport": "Gymnastics",
+   "gold": 9,
+   "silver": 5,
+   "bronze": 4,
+   "medals": 18
+  },
+  {
+   "rnk": 3,
+   "athlete_name": "Nikolay Yefimovich Andrianov",
+   "noc": "URS",
+   "sport": "Gymnastics",
+   "gold": 7,
+   "silver": 5,
+   "bronze": 3,
+   "medals": 15
+  },
+  {
+   "rnk": 4,
+   "athlete_name": "Ole Einar Bjrndalen",
+   "noc": "NOR",
+   "sport": "Biathlon",
+   "gold": 8,
+   "silver": 4,
+   "bronze": 1,
+   "medals": 13
+  },
+  {
+   "rnk": 5,
+   "athlete_name": "Borys Anfiyanovych Shakhlin",
+   "noc": "URS",
+   "sport": "Gymnastics",
+   "gold": 7,
+   "silver": 4,
+   "bronze": 2,
+   "medals": 13
+  }
+ ],
+ "medal_efficiency_top5": [
+  {"region": "Kenya", "athlete_games": 274, "medals": 53, "medals_per_100_athletes": 19.34},
+  {"region": "Russia", "athlete_games": 2048, "medals": 389, "medals_per_100_athletes": 18.99},
+  {"region": "USA", "athlete_games": 2792, "medals": 526, "medals_per_100_athletes": 18.84},
+  {"region": "China", "athlete_games": 2195, "medals": 381, "medals_per_100_athletes": 17.36},
+  {"region": "Cuba", "athlete_games": 764, "medals": 105, "medals_per_100_athletes": 13.74}
+ ],
+ "assertions_passed": 26,
+ "assertions_total": 26
+}

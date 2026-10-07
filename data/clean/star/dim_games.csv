@@ -1,0 +1,52 @@
+games_key,games,year,season,host_city,host_noc,host_region,is_intercalated,era
+18961,1896 Summer,1896,Summer,Athina,GRE,Greece,0,1896-1936
+19001,1900 Summer,1900,Summer,Paris,FRA,France,0,1896-1936
+19041,1904 Summer,1904,Summer,St. Louis,USA,USA,0,1896-1936
+19061,1906 Summer,1906,Summer,Athina,GRE,Greece,1,1896-1936
+19081,1908 Summer,1908,Summer,London,GBR,UK,0,1896-1936
+19121,1912 Summer,1912,Summer,Stockholm,SWE,Sweden,0,1896-1936
+19201,1920 Summer,1920,Summer,Antwerpen,BEL,Belgium,0,1896-1936
+19241,1924 Summer,1924,Summer,Paris,FRA,France,0,1896-1936
+19242,1924 Winter,1924,Winter,Chamonix,FRA,France,0,1896-1936
+19281,1928 Summer,1928,Summer,Amsterdam,NED,Netherlands,0,1896-1936
+19282,1928 Winter,1928,Winter,Sankt Moritz,SUI,Switzerland,0,1896-1936
+19321,1932 Summer,1932,Summer,Los Angeles,USA,USA,0,1896-1936
+19322,1932 Winter,1932,Winter,Lake Placid,USA,USA,0,1896-1936
+19361,1936 Summer,1936,Summer,Berlin,GER,Germany,0,1896-1936
+19362,1936 Winter,1936,Winter,Garmisch-Partenkirchen,GER,Germany,0,1896-1936
+19481,1948 Summer,1948,Summer,London,GBR,UK,0,1948-1988
+19482,1948 Winter,1948,Winter,Sankt Moritz,SUI,Switzerland,0,1948-1988
+19521,1952 Summer,1952,Summer,Helsinki,FIN,Finland,0,1948-1988
+19522,1952 Winter,1952,Winter,Oslo,NOR,Norway,0,1948-1988
+19561,1956 Summer,1956,Summer,Melbourne,AUS,Australia,0,1948-1988
+19562,1956 Winter,1956,Winter,Cortina d'Ampezzo,ITA,Italy,0,1948-1988
+19601,1960 Summer,1960,Summer,Roma,ITA,Italy,0,1948-1988
+19602,1960 Winter,1960,Winter,Squaw Valley,USA,USA,0,1948-1988
+19641,1964 Summer,1964,Summer,Tokyo,JPN,Japan,0,1948-1988
+19642,1964 Winter,1964,Winter,Innsbruck,AUT,Austria,0,1948-1988
+19681,1968 Summer,1968,Summer,Mexico City,MEX,Mexico,0,1948-1988
+19682,1968 Winter,1968,Winter,Grenoble,FRA,France,0,1948-1988
+19721,1972 Summer,1972,Summer,Munich,FRG,Germany,0,1948-1988
+19722,1972 Winter,1972,Winter,Sapporo,JPN,Japan,0,1948-1988
+19761,1976 Summer,1976,Summer,Montreal,CAN,Canada,0,1948-1988
+19762,1976 Winter,1976,Winter,Innsbruck,AUT,Austria,0,1948-1988
+19801,1980 Summer,1980,Summer,Moskva,URS,Russia,0,1948-1988
+19802,1980 Winter,1980,Winter,Lake Placid,USA,USA,0,1948-1988
+19841,1984 Summer,1984,Summer,Los Angeles,USA,USA,0,1948-1988
+19842,1984 Winter,1984,Winter,Sarajevo,YUG,Serbia,0,1948-1988
+19881,1988 Summer,1988,Summer,Seoul,KOR,South Korea,0,1948-1988
+19882,1988 Winter,1988,Winter,Calgary,CAN,Canada,0,1948-1988
+19921,1992 Summer,1992,Summer,Barcelona,ESP,Spain,0,1992-2016
+19922,1992 Winter,1992,Winter,Albertville,FRA,France,0,1992-2016
+19942,1994 Winter,1994,Winter,Lillehammer,NOR,Norway,0,1992-2016
+19961,1996 Summer,1996,Summer,Atlanta,USA,USA,0,1992-2016
+19982,1998 Winter,1998,Winter,Nagano,JPN,Japan,0,1992-2016
+20001,2000 Summer,2000,Summer,Sydney,AUS,Australia,0,1992-2016
+20022,2002 Winter,2002,Winter,Salt Lake City,USA,USA,0,1992-2016
+20041,2004 Summer,2004,Summer,Athina,GRE,Greece,0,1992-2016
+20062,2006 Winter,2006,Winter,Torino,ITA,Italy,0,1992-2016
+20081,2008 Summer,2008,Summer,Beijing,CHN,China,0,1992-2016
+20102,2010 Winter,2010,Winter,Vancouver,CAN,Canada,0,1992-2016
+20121,2012 Summer,2012,Summer,London,GBR,UK,0,1992-2016
+20142,2014 Winter,2014,Winter,Sochi,RUS,Russia,0,1992-2016
+20161,2016 Summer,2016,Summer,Rio de Janeiro,BRA,Brazil,0,1992-2016

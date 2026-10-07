@@ -1,0 +1,51 @@
+games,year,season,host_city,host_region,host_medals,host_pct_at_home,host_pct_other_games,comparison_games,home_lift
+1896 Summer,1896,Summer,Athina,Greece,44,36.67,0.65,3,56.41
+1900 Summer,1900,Summer,Paris,France,109,36.33,5.07,4,7.17
+1904 Summer,1904,Summer,St. Louis,USA,231,82.5,17.03,4,4.84
+1908 Summer,1908,Summer,London,UK,145,45.03,9.07,5,4.96
+1912 Summer,1912,Summer,Stockholm,Sweden,65,20.97,6.15,5,3.41
+1920 Summer,1920,Summer,Antwerpen,Belgium,36,8.22,1.76,5,4.67
+1924 Summer,1924,Summer,Paris,France,37,9.81,6.13,5,1.6
+1924 Winter,1924,Winter,Chamonix,France,3,5.66,2.26,3,2.5
+1928 Summer,1928,Summer,Amsterdam,Netherlands,19,5.81,2.89,4,2.01
+1928 Winter,1928,Winter,Sankt Moritz,Switzerland,1,2.44,4.64,3,0.53
+1932 Summer,1932,Summer,Los Angeles,USA,103,29.68,19.86,4,1.49
+1932 Winter,1932,Winter,Lake Placid,USA,12,28.57,10.01,3,2.85
+1936 Summer,1936,Summer,Berlin,Germany,89,22.82,3.88,4,5.88
+1936 Winter,1936,Winter,Garmisch-Partenkirchen,Germany,6,11.76,1.8,4,6.54
+1948 Summer,1948,Summer,London,UK,23,5.65,3.87,4,1.46
+1948 Winter,1948,Winter,Sankt Moritz,Switzerland,9,13.64,4.95,4,2.75
+1952 Summer,1952,Summer,Helsinki,Finland,22,4.81,2.43,4,1.98
+1952 Winter,1952,Winter,Oslo,Norway,16,23.88,10.69,4,2.23
+1956 Summer,1956,Summer,Melbourne,Australia,35,7.49,3.44,5,2.18
+1956 Winter,1956,Winter,Cortina d'Ampezzo,Italy,3,4.23,2.69,5,1.57
+1960 Summer,1960,Summer,Roma,Italy,36,7.81,4.67,6,1.67
+1960 Winter,1960,Winter,Squaw Valley,USA,10,12.35,9.6,6,1.29
+1964 Summer,1964,Summer,Tokyo,Japan,29,5.79,3.83,6,1.51
+1964 Winter,1964,Winter,Innsbruck,Austria,12,11.65,9.26,6,1.26
+1968 Summer,1968,Summer,Mexico City,Mexico,9,1.71,0.33,6,5.18
+1968 Winter,1968,Winter,Grenoble,France,9,8.65,2.52,6,3.43
+1972 Summer,1972,Summer,Munich,Germany,106,17.67,13.07,6,1.35
+1972 Winter,1972,Winter,Sapporo,Japan,3,2.86,0.29,6,9.85
+1976 Summer,1976,Summer,Montreal,Canada,11,1.79,1.73,6,1.04
+1976 Winter,1976,Winter,Innsbruck,Austria,6,5.41,6.86,6,0.79
+1980 Summer,1980,Summer,Moskva,Russia,195,30.9,14.28,6,2.16
+1980 Winter,1980,Winter,Lake Placid,USA,12,10.43,6.53,6,1.6
+1984 Summer,1984,Summer,Los Angeles,USA,173,25.26,11.5,6,2.2
+1984 Winter,1984,Winter,Sarajevo,Serbia,1,0.85,0.36,6,2.37
+1988 Summer,1988,Summer,Seoul,South Korea,33,4.47,2.26,6,1.98
+1988 Winter,1988,Winter,Calgary,Canada,5,3.62,4.45,6,0.81
+1992 Summer,1992,Summer,Barcelona,Spain,22,2.7,1.27,6,2.13
+1992 Winter,1992,Winter,Albertville,France,9,5.36,2.72,6,1.97
+1994 Winter,1994,Winter,Lillehammer,Norway,23,12.78,8.36,6,1.53
+1996 Summer,1996,Summer,Atlanta,USA,101,12.01,13.9,6,0.86
+1998 Winter,1998,Winter,Nagano,Japan,10,4.95,1.81,6,2.74
+2000 Summer,2000,Summer,Sydney,Australia,58,6.27,3.98,6,1.58
+2002 Winter,2002,Winter,Salt Lake City,USA,34,14.59,8.99,6,1.62
+2004 Summer,2004,Summer,Athina,Greece,16,1.73,0.64,6,2.7
+2006 Winter,2006,Winter,Torino,Italy,11,4.37,5.26,5,0.83
+2008 Summer,2008,Summer,Beijing,China,100,10.38,7.14,5,1.45
+2010 Winter,2010,Winter,Vancouver,Canada,26,10.08,8.18,4,1.23
+2012 Summer,2012,Summer,London,UK,65,6.76,4.53,4,1.49
+2014 Winter,2014,Winter,Sochi,Russia,33,11.19,6.71,3,1.67
+2016 Summer,2016,Summer,Rio de Janeiro,Brazil,19,1.95,1.5,3,1.3

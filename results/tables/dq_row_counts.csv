@@ -1,0 +1,9 @@
+entity,raw_rows,distinct_rows,clean_rows,grain
+athlete_events rows,271116,269731,269731,athlete x event x Games
+dim_athlete,,,135571,athlete id
+dim_event,,,765,sport x event
+dim_games,,,51,Games edition
+dim_noc,,,231,NOC code
+fact_entry,,,269731,athlete x event x Games
+fact_medal (team-deduplicated podium places),39772,,18927,Games x event x NOC x team entry x medal
+noc_regions rows,230,,231,NOC code

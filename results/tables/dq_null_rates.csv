@@ -1,0 +1,8 @@
+entity,column_name,null_pct,treatment
+entries,Age,3.453,"NA -> NULL, left out of age views"
+entries,Height,21.805,NA -> NULL
+entries,Height (Summer 1992-2016),5.358,physique views use 1992-2016 only
+entries,Height (before 1960),78.628,mostly unknown for early Games
+entries,Medal,85.255,NA = no medal (not missing)
+entries,Weight,22.811,NA -> NULL
+entries,region (after NOC mapping),0.0,SGP override added

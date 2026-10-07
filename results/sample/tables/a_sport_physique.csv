@@ -1,0 +1,9 @@
+sport,sex,athlete_games,with_height,avg_height_cm,avg_weight_kg,avg_bmi,avg_age
+Athletics,F,308,302,168.4,59.3,20.82,26.0
+Athletics,M,438,430,180.8,75.5,22.91,26.3
+Canoeing,M,109,107,180.6,80.9,24.74,25.7
+Cycling,M,129,127,180.4,73.0,22.43,26.7
+Rowing,M,111,106,189.2,86.6,24.1,26.4
+Swimming,F,139,128,172.2,62.6,21.09,20.5
+Swimming,M,165,155,187.6,80.7,22.89,22.9
+Wrestling,M,105,100,174.3,78.0,25.36,26.6

@@ -1,0 +1,188 @@
+{
+ "project": "da-learn-23-olympic-history",
+ "dataset": "120 years of Olympic history: athletes and results, Athens 1896 to Rio 2016 (Kaggle heesoo37/120-years-of-olympic-history-athletes-and-results, CC0: Public Domain; scraped from sports-reference.com by Randi Griffin). GitHub mirror rgriff23/Olympic_history: athlete_events.csv (271,116 rows x 15 columns, 41,229,571 B) + noc_regions.csv (230 NOCs, 3,595 B)",
+ "source_mode": "sample",
+ "kpis": {
+  "raw_rows": 15313,
+  "clean_entries": 13928,
+  "athletes": 7277,
+  "games_editions": 51,
+  "official_games_editions": 50,
+  "summer_games": 28,
+  "winter_games": 22,
+  "official_events": 612,
+  "official_sports": 57,
+  "nocs": 205,
+  "regions": 189,
+  "athlete_medal_rows": 1989,
+  "medal_events": 1798,
+  "pct_entries_medal": 15.03,
+  "female_pct_athletes_2016": 47.6,
+  "female_pct_athletes_1948": 9.63,
+  "athletes_2016": 521,
+  "athletes_1896": 14,
+  "most_medals_one_athlete": 13,
+  "first_year": 1896,
+  "last_year": 2016
+ },
+ "analysis_tables": [
+  "tables/a_kpi_headline.csv",
+  "tables/a_games.csv",
+  "tables/a_medal_table.csv",
+  "tables/a_medal_table_noc.csv",
+  "tables/a_medal_era.csv",
+  "tables/a_region_trend.csv",
+  "tables/a_host_effect.csv",
+  "tables/a_women.csv",
+  "tables/a_sport_physique.csv",
+  "tables/a_age_band.csv",
+  "tables/a_sport_age.csv",
+  "tables/a_top_athletes.csv",
+  "tables/a_medal_efficiency.csv",
+  "tables/a_sport_dominance.csv"
+ ],
+ "data_quality": {
+  "row_counts": [
+   {
+    "entity": "athlete_events rows",
+    "raw_rows": 15313,
+    "distinct_rows": 13928,
+    "clean_rows": 13928,
+    "grain": "athlete x event x Games"
+   },
+   {
+    "entity": "noc_regions rows",
+    "raw_rows": 230,
+    "distinct_rows": null,
+    "clean_rows": 231,
+    "grain": "NOC code"
+   },
+   {
+    "entity": "fact_entry",
+    "raw_rows": null,
+    "distinct_rows": null,
+    "clean_rows": 13928,
+    "grain": "athlete x event x Games"
+   },
+   {
+    "entity": "fact_medal (team-deduplicated podium places)",
+    "raw_rows": 2014,
+    "distinct_rows": null,
+    "clean_rows": 1823,
+    "grain": "Games x event x NOC x team entry x medal"
+   },
+   {
+    "entity": "dim_athlete",
+    "raw_rows": null,
+    "distinct_rows": null,
+    "clean_rows": 7277,
+    "grain": "athlete id"
+   },
+   {
+    "entity": "dim_games",
+    "raw_rows": null,
+    "distinct_rows": null,
+    "clean_rows": 51,
+    "grain": "Games edition"
+   },
+   {
+    "entity": "dim_event",
+    "raw_rows": null,
+    "distinct_rows": null,
+    "clean_rows": 650,
+    "grain": "sport x event"
+   },
+   {"entity": "dim_noc", "raw_rows": null, "distinct_rows": null, "clean_rows": 231, "grain": "NOC code"}
+  ],
+  "null_rates": [
+   {
+    "entity": "entries",
+    "column_name": "Age",
+    "null_pct": 3.647,
+    "treatment": "NA -> NULL, left out of age views"
+   },
+   {"entity": "entries", "column_name": "Height", "null_pct": 25.474, "treatment": "NA -> NULL"},
+   {"entity": "entries", "column_name": "Weight", "null_pct": 26.544, "treatment": "NA -> NULL"},
+   {
+    "entity": "entries",
+    "column_name": "Height (Summer 1992-2016)",
+    "null_pct": 4.832,
+    "treatment": "physique views use 1992-2016 only"
+   },
+   {
+    "entity": "entries",
+    "column_name": "Height (before 1960)",
+    "null_pct": 80.553,
+    "treatment": "mostly unknown for early Games"
+   },
+   {
+    "entity": "entries",
+    "column_name": "Medal",
+    "null_pct": 85.54,
+    "treatment": "NA = no medal (not missing)"
+   },
+   {
+    "entity": "entries",
+    "column_name": "region (after NOC mapping)",
+    "null_pct": 0.0,
+    "treatment": "SGP override added"
+   }
+  ],
+  "issues": {
+   "exact duplicate rows dropped": 1385,
+   "rows with unparseable id / year dropped": 0,
+   "NOC SGP missing from noc_regions (override -> Singapore)": 10,
+   "region literal NA (ROT/TUV/UNK, notes used)": 2,
+   "team names with -1/-2 suffix (second boats/crews) normalised": 305,
+   "Art Competitions rows (excluded from sport analysis)": 617,
+   "1906 Intercalated Games rows (excluded, not IOC-recognised)": 81,
+   "athlete medal rows collapsed into team podium places": 191,
+   "BMI < 15 or > 60 (flagged, left out of BMI averages)": 3,
+   "age 65+ (kept: mostly art, equestrian, sailing, shooting)": 49,
+   "age under 13 (kept)": 2,
+   "Games played in two cities (1956 Summer: Melbourne + Stockholm)": 1,
+   "official events with more than one gold (ties / shared golds)": 2,
+   "official events with no gold recorded": 4162,
+   "repeat rows: same athlete, Games, event, team (1900/1908 races + several art works; kept)": 8,
+   "athlete ids with more than one name spelling": 0,
+   "RI: entries lost in dim joins": 0
+  },
+  "assertions": {
+   "clean rows = distinct raw rows": "PASS",
+   "no exact duplicate entries left": "PASS",
+   "entry_key unique": "PASS",
+   "sex in {M,F}": "PASS",
+   "one sex per athlete id": "PASS",
+   "season in {Summer,Winter}": "PASS",
+   "Games label = year + season": "PASS",
+   "year in 1896..2016": "PASS",
+   "event name starts with sport name": "PASS",
+   "medal in {Gold,Silver,Bronze,NA}": "PASS",
+   "age within 10..97 when known": "PASS",
+   "height within 120..230 cm when known": "PASS",
+   "weight within 20..220 kg when known": "PASS",
+   "every NOC maps to a region": "PASS",
+   "every Games edition has a host nation": "PASS",
+   "one city per Games except 1956 Summer": "PASS",
+   "one row per athlete x Games x event x team after 1908 (art works excepted)": "PASS",
+   "medal events <= athlete medal rows": "PASS",
+   "medal rows reconcile (fact_medal athletes = medal entries)": "PASS",
+   "fact_entry keeps every clean entry (RI)": "PASS",
+   "fact_entry athlete ids exist in dim_athlete": "PASS",
+   "fact_medal keys exist in dim_games and dim_event": "PASS",
+   "dim_games has 51 editions (28 Summer + 1906 Intercalated + 22 Winter)": "PASS",
+   "region medal table total = official medal events": "PASS",
+   "at most 3 medal ranks": "PASS",
+   "BMI flagged outliers are NULL in fact_entry": "PASS"
+  }
+ },
+ "engine": {"duckdb": "1.5.6", "python": "3.13.5"},
+ "sql_timings_s": {
+  "00_duckdb_compat.sql": 0.001,
+  "01_staging.sql": 0.052,
+  "02_cleaning.sql": 0.115,
+  "03_model.sql": 0.033,
+  "04_analysis.sql": 0.072,
+  "05_quality_checks.sql": 0.026
+ }
+}

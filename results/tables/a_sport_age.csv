@@ -1,0 +1,43 @@
+sport,season,medal_entries,median_medalist_age,youngest_medalist,oldest_medalist
+Alpine Skiing,Winter,211,26.0,18,36
+Archery,Summer,168,24.0,17,45
+Athletics,Summer,1297,26.0,17,40
+Badminton,Summer,168,25.0,16,34
+Baseball,Summer,336,26.0,18,38
+Basketball,Summer,501,27.0,17,37
+Biathlon,Winter,303,27.0,19,40
+Bobsleigh,Winter,154,29.0,21,39
+Boxing,Summer,335,23.0,17,35
+Canoeing,Summer,583,27.0,17,43
+Cross Country Skiing,Winter,366,28.0,19,43
+Curling,Winter,136,32.0,22,50
+Cycling,Summer,491,26.0,17,43
+Diving,Summer,204,22.0,13,34
+Equestrianism,Summer,317,36.0,21,61
+Fencing,Summer,453,26.0,15,41
+Figure Skating,Winter,153,24.0,15,36
+Football,Summer,663,23.0,15,37
+Freestyle Skiing,Winter,102,25.0,18,34
+Gymnastics,Summer,505,20.0,13,34
+Handball,Summer,619,27.0,18,42
+Hockey,Summer,676,26.0,18,37
+Ice Hockey,Winter,770,26.0,15,43
+Judo,Summer,392,25.0,16,34
+Nordic Combined,Winter,111,25.0,17,36
+Rhythmic Gymnastics,Summer,126,18.5,15,25
+Rowing,Summer,1020,27.0,19,52
+Sailing,Summer,354,29.0,19,54
+Shooting,Summer,321,30.0,16,58
+Short Track Speed Skating,Winter,284,22.0,13,34
+Ski Jumping,Winter,129,24.0,16,41
+Softball,Summer,179,26.0,18,41
+Speed Skating,Winter,281,26.0,18,37
+Swimming,Summer,1306,22.0,13,41
+Synchronized Swimming,Summer,197,24.0,16,31
+Table Tennis,Summer,150,24.0,15,35
+Taekwondo,Summer,144,23.0,17,32
+Tennis,Summer,144,26.0,16,38
+Volleyball,Summer,486,26.0,17,40
+Water Polo,Summer,458,26.0,17,39
+Weightlifting,Summer,284,24.0,17,36
+Wrestling,Summer,437,26.0,18,38

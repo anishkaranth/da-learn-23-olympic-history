@@ -1,0 +1,53 @@
+games,city,host_noc,is_main_host_city
+1896 Summer,Athina,GRE,1
+1900 Summer,Paris,FRA,1
+1904 Summer,St. Louis,USA,1
+1906 Summer,Athina,GRE,1
+1908 Summer,London,GBR,1
+1912 Summer,Stockholm,SWE,1
+1920 Summer,Antwerpen,BEL,1
+1924 Summer,Paris,FRA,1
+1924 Winter,Chamonix,FRA,1
+1928 Summer,Amsterdam,NED,1
+1928 Winter,Sankt Moritz,SUI,1
+1932 Summer,Los Angeles,USA,1
+1932 Winter,Lake Placid,USA,1
+1936 Summer,Berlin,GER,1
+1936 Winter,Garmisch-Partenkirchen,GER,1
+1948 Summer,London,GBR,1
+1948 Winter,Sankt Moritz,SUI,1
+1952 Summer,Helsinki,FIN,1
+1952 Winter,Oslo,NOR,1
+1956 Summer,Melbourne,AUS,1
+1956 Summer,Stockholm,SWE,0
+1956 Winter,Cortina d'Ampezzo,ITA,1
+1960 Summer,Roma,ITA,1
+1960 Winter,Squaw Valley,USA,1
+1964 Summer,Tokyo,JPN,1
+1964 Winter,Innsbruck,AUT,1
+1968 Summer,Mexico City,MEX,1
+1968 Winter,Grenoble,FRA,1
+1972 Summer,Munich,FRG,1
+1972 Winter,Sapporo,JPN,1
+1976 Summer,Montreal,CAN,1
+1976 Winter,Innsbruck,AUT,1
+1980 Summer,Moskva,URS,1
+1980 Winter,Lake Placid,USA,1
+1984 Summer,Los Angeles,USA,1
+1984 Winter,Sarajevo,YUG,1
+1988 Summer,Seoul,KOR,1
+1988 Winter,Calgary,CAN,1
+1992 Summer,Barcelona,ESP,1
+1992 Winter,Albertville,FRA,1
+1994 Winter,Lillehammer,NOR,1
+1996 Summer,Atlanta,USA,1
+1998 Winter,Nagano,JPN,1
+2000 Summer,Sydney,AUS,1
+2002 Winter,Salt Lake City,USA,1
+2004 Summer,Athina,GRE,1
+2006 Winter,Torino,ITA,1
+2008 Summer,Beijing,CHN,1
+2010 Winter,Vancouver,CAN,1
+2012 Summer,London,GBR,1
+2014 Winter,Sochi,RUS,1
+2016 Summer,Rio de Janeiro,BRA,1
